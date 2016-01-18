@@ -4,12 +4,15 @@ Android easing interpolators.Based on http://easing.net
 
 #### Usage
 
-``` dependencies {
-      compile 'me.ydcool.easing-android:easing-android:1.0'
-  }
+```java 
+
+    dependencies {
+        compile 'me.ydcool.easing-android:easing-android:1.0'
+    }
 ```
 
 #### TODO
+
 * finish demo app
 
 #### License
