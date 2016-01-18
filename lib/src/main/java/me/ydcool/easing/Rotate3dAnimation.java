@@ -8,24 +8,21 @@ import android.view.animation.Transformation;
 /**
  * Original code found at: { https://code.google.com/p/android-stocker/source
  * /browse/trunk/src/com/twofuse/stocker/Rotate3dAnimation.java?r=2}
- * <p/>
- * <p>
+ *
  * Use (in set): Rotate3dAnimation skew = new Rotate3dAnimation(20, 0, 0, 0, 0,
  * 0); set.addAnimation(skew);
- * </p>
- * <p>
+ *
  * animation = new TranslateAnimation(0, 0, 0, 0, Animation.RELATIVE_TO_SELF,
  * 0.5f, 0, 0); set.addAnimation(animation);
- * </p>
- * <P>
+ *
  * // set.setStartOffset((position ) * 10);
- * </p>
- * <p>
+ *
  * Use (single view): Rotate3dAnimation skew = new Rotate3dAnimation(20, 0, 0,
  * 0, 0, 0); view.startAnimation(skew);
- * </p>
  *
- * @author ydcool created by methodin https://gist.github.com/methodin/5678214
+ * More information at https://gist.github.com/methodin/5678214
+ *
+ * @author methodin
  */
 public class Rotate3dAnimation extends Animation {
     private final float fromXDegrees;
