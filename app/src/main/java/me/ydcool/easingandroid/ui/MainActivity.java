@@ -8,35 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import me.ydcool.easing.EaseInBackInterpolator;
-import me.ydcool.easing.EaseInBounceInterpolator;
-import me.ydcool.easing.EaseInCircInterpolator;
-import me.ydcool.easing.EaseInCubicInterpolator;
-import me.ydcool.easing.EaseInElasticInterpolator;
-import me.ydcool.easing.EaseInExpoInterpolator;
-import me.ydcool.easing.EaseInOutBackInterpolator;
-import me.ydcool.easing.EaseInOutCircInterpolator;
-import me.ydcool.easing.EaseInOutCubicInterpolator;
-import me.ydcool.easing.EaseInOutElasticInterpolator;
-import me.ydcool.easing.EaseInOutExpoInterpolator;
-import me.ydcool.easing.EaseInOutQuadInterpolator;
-import me.ydcool.easing.EaseInOutQuartInterpolator;
-import me.ydcool.easing.EaseInOutQuintInterpolator;
-import me.ydcool.easing.EaseInOutSineInterpolator;
-import me.ydcool.easing.EaseInQuadInterpolator;
-import me.ydcool.easing.EaseInQuartInterpolator;
-import me.ydcool.easing.EaseInQuintInterpolator;
-import me.ydcool.easing.EaseInSineInterpolator;
-import me.ydcool.easing.EaseOutBackInterpolator;
-import me.ydcool.easing.EaseOutBounceInterpolator;
-import me.ydcool.easing.EaseOutCircInterpolator;
-import me.ydcool.easing.EaseOutCubicInterpolator;
-import me.ydcool.easing.EaseOutElasticInterpolator;
-import me.ydcool.easing.EaseOutExpoInterpolator;
-import me.ydcool.easing.EaseOutQuadInterpolator;
-import me.ydcool.easing.EaseOutQuartInterpolator;
-import me.ydcool.easing.EaseOutQuintInterpolator;
-import me.ydcool.easing.EaseOutSineInterpolator;
+import me.ydcool.easing.*;
 import me.ydcool.easingandroid.R;
 
 public class MainActivity extends AppCompatActivity {
