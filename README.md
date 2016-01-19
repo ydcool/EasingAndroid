@@ -4,11 +4,29 @@ Android easing interpolators.Based on http://easing.net
 
 #### Usage
 
-```java 
+1.Add dependence.
 
-    dependencies {
-        compile 'me.ydcool.easing-android:easing-android:1.0'
+```java
+    buildscript {
+        repositories{
+            jcenter()
+        }
     }
+```
+
+```java 
+    dependencies {
+        compile 'me.ydcool:easing-android:1.0'
+    }
+```
+
+2.Use easing interpolators same as android build-in interpolators.
+
+```java 
+    AlphaAnimation animation = new AlphaAnimation(0.f,1.f);
+    animation.setDuration(300);
+    animation.setInterpolator(new EaseOutCubicInterpolator());
+    btnContainer.startAnimation(animation);
 ```
 
 #### TODO
