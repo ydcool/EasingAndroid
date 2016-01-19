@@ -5,10 +5,13 @@
 
 Android easing interpolators.Based on http://easings.net
 
+#### Demo
+
+`//TODO`
 
 #### Install
 
-###### Gradle
+##### Gradle
 
 ```java 
     dependencies {
@@ -26,10 +29,6 @@ Use easing interpolators same as android build-in interpolators.
     animation.setInterpolator(new EaseOutCubicInterpolator());
     mView.startAnimation(animation);
 ```
-
-#### TODO
-
-* finish demo app
 
 #### License
  

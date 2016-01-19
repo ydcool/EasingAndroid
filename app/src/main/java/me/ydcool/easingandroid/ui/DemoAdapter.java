@@ -1,4 +1,4 @@
-package me.ydcool.easingandroid.ui.adapters;
+package me.ydcool.easingandroid.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -14,7 +14,6 @@ import android.view.animation.Interpolator;
 import java.util.ArrayList;
 
 import me.ydcool.easingandroid.R;
-import me.ydcool.easingandroid.ui.viewholders.DemoItemHolder;
 
 /**
  * Created by ydcool on 16/1/19.

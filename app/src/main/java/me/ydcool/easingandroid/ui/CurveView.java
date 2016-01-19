@@ -1,4 +1,4 @@
-package me.ydcool.easingandroid.ui.views;
+package me.ydcool.easingandroid.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -55,14 +55,15 @@ public class CurveView extends View {
     private int xRange;
     private int yRange;
 
-    private String mTitle;
+    private float mCursorAnimatedValue;
 
-    private float mCursorAnimtedValue;
+    private float mCurrentPlayProgress;
 
     private boolean mCursorAnimRunning;
 
-    private ValueAnimator mCursorAnimator;
+    private String mTitle;
 
+    private ValueAnimator mCursorAnimator;
     private Animator.AnimatorListener mCursorAnimatorListener;
 
     public CurveView(Context context) {
@@ -126,10 +127,10 @@ public class CurveView extends View {
 
         if (mCursorAnimRunning) {
             //draw cursor
-            drawCursor(canvas, mWidth - mPaddingH, (int) (mHeight - mPaddingV - yRange * mCursorAnimtedValue));
+            drawCursor(canvas, mWidth - mPaddingH, (int) (mHeight - mPaddingV - yRange * mCursorAnimatedValue));
 
             //draw pointer
-            drawPointer(canvas, mCursorAnimtedValue);
+            drawPointer(canvas, mCurrentPlayProgress);
         }
 
         canvas.restoreToCount(sc);
@@ -146,10 +147,10 @@ public class CurveView extends View {
                 textPaint,
                 mWidth,
                 Layout.Alignment.ALIGN_CENTER,
-                0.f, 1.f,
+                1.f, 1.f,
                 false);
 
-        int offsetY = (mPaddingV - mText.getHeight()) >> 1;
+        int offsetY = (mPaddingV - mText.getHeight()) / 3;
         canvas.translate(0, offsetY);
         mText.draw(canvas);
         canvas.translate(0, -offsetY);
@@ -179,7 +180,7 @@ public class CurveView extends View {
     private void drawPointer(Canvas canvas, float percentage) {
         mPaint.setColor(Color.WHITE);
         canvas.drawCircle(
-                mPaddingH + (float) xRange * percentage,
+                mPaddingH + xRange * percentage,
                 mHeight - mPaddingV - mInterpolator.getInterpolation(percentage) * yRange,
                 2,
                 mPaint);
@@ -208,14 +209,14 @@ public class CurveView extends View {
         else
             this.mInterpolator = new LinearInterpolator();
 
-        mTitle = mInterpolator.getClass().getSimpleName();
+        mTitle = mInterpolator.getClass().getSimpleName().replace("Interpolator", "");
     }
 
     public void startCursorAnimation() {
         this.startCursorAnimation(mLongAnimTime);
     }
 
-    public void startCursorAnimation(long duration) {
+    public void startCursorAnimation(final long duration) {
         if (mCursorAnimator != null)
             mCursorAnimator.cancel();
 
@@ -225,7 +226,8 @@ public class CurveView extends View {
         mCursorAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                mCursorAnimtedValue = (float) animation.getAnimatedValue();
+                mCurrentPlayProgress = (float) animation.getCurrentPlayTime() / (float) duration;
+                mCursorAnimatedValue = (float) animation.getAnimatedValue();
                 postInvalidate();
             }
         });
