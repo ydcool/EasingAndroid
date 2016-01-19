@@ -5,17 +5,10 @@
 
 Android easing interpolators.Based on http://easings.net
 
-#### Usage
 
-1.Add dependence.
+#### Install
 
-```java
-    buildscript {
-        repositories{
-            jcenter()
-        }
-    }
-```
+###### Gradle
 
 ```java 
     dependencies {
@@ -23,7 +16,9 @@ Android easing interpolators.Based on http://easings.net
     }
 ```
 
-2.Use easing interpolators same as android build-in interpolators.
+#### Usage
+
+Use easing interpolators same as android build-in interpolators.
 
 ```java 
     AlphaAnimation animation = new AlphaAnimation(0.f,1.f);
