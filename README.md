@@ -1,5 +1,8 @@
 ### Easing-Android
 
+[ ![Download](https://api.bintray.com/packages/ydcool/maven/easing-android/images/download.svg) ]
+(https://bintray.com/ydcool/maven/easing-android/_latestVersion)
+
 Android easing interpolators.Based on http://easing.net
 
 #### Usage
@@ -16,7 +19,7 @@ Android easing interpolators.Based on http://easing.net
 
 ```java 
     dependencies {
-        compile 'me.ydcool:easing-android:1.0'
+        compile 'me.ydcool:easing-android:latest.integration'
     }
 ```
 
@@ -26,7 +29,7 @@ Android easing interpolators.Based on http://easing.net
     AlphaAnimation animation = new AlphaAnimation(0.f,1.f);
     animation.setDuration(300);
     animation.setInterpolator(new EaseOutCubicInterpolator());
-    btnContainer.startAnimation(animation);
+    mView.startAnimation(animation);
 ```
 
 #### TODO
@@ -35,7 +38,7 @@ Android easing interpolators.Based on http://easing.net
 
 #### License
  
-    Copyright 2015 Ydcool
+    Copyright 2016 Ydcool
     
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
