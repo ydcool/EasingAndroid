@@ -3,7 +3,7 @@
 [ ![Download](https://api.bintray.com/packages/ydcool/maven/easing-android/images/download.svg) ]
 (https://bintray.com/ydcool/maven/easing-android/_latestVersion)
 
-Android easing interpolators.Based on http://easing.net
+Android easing interpolators.Based on http://easings.net
 
 #### Usage
 
