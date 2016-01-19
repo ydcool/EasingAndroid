@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final Class[] EASING_INTERPOLATOR = new Class[]{
             EaseInBackInterpolator.class, EaseOutBackInterpolator.class, EaseInOutBackInterpolator.class,
-            EaseInBounceInterpolator.class, EaseOutBounceInterpolator.class, EaseInOutBackInterpolator.class,
+            EaseInBounceInterpolator.class, EaseOutBounceInterpolator.class, EaseInOutBounceInterpolator.class,
             EaseInCircInterpolator.class, EaseOutCircInterpolator.class, EaseInOutCircInterpolator.class,
             EaseInCubicInterpolator.class, EaseOutCubicInterpolator.class, EaseInOutCubicInterpolator.class,
             EaseInElasticInterpolator.class, EaseOutElasticInterpolator.class, EaseInOutElasticInterpolator.class,
