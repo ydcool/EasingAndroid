@@ -7,7 +7,14 @@ Android easing interpolators.Based on http://easings.net
 
 #### Demo
 
-`//TODO`
+##### ScreenCapture
+
+![Demo](art/demo.gif)
+
+##### Demo Download
+
+Directly download demo [apk](app/easing_android_demo.apk)  or scan ![qrCode]
+(http://https://api.qrserver.com/v1/create-qr-code/?data=https://github.com/Ydcool/EasingAndroid/tree/master/app/easing_android_demo.apk&size=100x100)
 
 #### Install
 

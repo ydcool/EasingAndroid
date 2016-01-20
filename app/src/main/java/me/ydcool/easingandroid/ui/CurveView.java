@@ -35,6 +35,9 @@ public class CurveView extends View {
     private static final TimeInterpolator sDefaultInterpolator =
             new AccelerateDecelerateInterpolator();
 
+    //precision for curve drawing,higher precision make curve more smooth but low efficiency.
+    private static final float CURVE_PRECISION = 100;
+
     private TimeInterpolator mInterpolator = sDefaultInterpolator;
 
     private Paint mPaint;
@@ -60,6 +63,8 @@ public class CurveView extends View {
     private float mCurrentPlayProgress;
 
     private boolean mCursorAnimRunning;
+
+    private Paint mCurvePaint;
 
     private String mTitle;
 
@@ -139,7 +144,7 @@ public class CurveView extends View {
     private void drawTitle(Canvas canvas) {
         TextPaint textPaint = new TextPaint();
         textPaint.setColor(Color.DKGRAY);
-        textPaint.setTextSize(15);
+        textPaint.setTextSize(24);
         textPaint.setAntiAlias(true);
 
         StaticLayout mText = new StaticLayout(
@@ -167,14 +172,23 @@ public class CurveView extends View {
     }
 
     private void drawCurve(Canvas canvas) {
-        mPaint.setColor(Color.BLACK);
-
-        for (int i = 0; i < xRange; i++) {
-            int x = mPaddingH + i;
-            int y = (int) (mHeight - mPaddingV - mInterpolator.getInterpolation((float) i / (float) xRange) * yRange);
-
-            canvas.drawPoint(x, y, mPaint);
+        if (mCurvePaint == null) {
+            mCurvePaint = new Paint();
+            mCurvePaint.setColor(Color.BLACK);
+            mCurvePaint.setStyle(Paint.Style.STROKE);
+            mCurvePaint.setAntiAlias(true);
         }
+
+        Path mCurvePath = new Path();
+
+        for (float i = 0.f; i <= 1.f; i += 1.f / CURVE_PRECISION) {
+            if (i == 0.f)
+                mCurvePath.moveTo(getCurveX(0.f), getCurveY(0.f));
+            else
+                mCurvePath.lineTo(getCurveX(i), getCurveY(i));
+        }
+
+        canvas.drawPath(mCurvePath, mCurvePaint);
     }
 
     private void drawPointer(Canvas canvas, float percentage) {
@@ -182,25 +196,33 @@ public class CurveView extends View {
         canvas.drawCircle(
                 mPaddingH + xRange * percentage,
                 mHeight - mPaddingV - mInterpolator.getInterpolation(percentage) * yRange,
-                2,
+                6,
                 mPaint);
     }
 
     private void drawCursor(Canvas canvas, int vertexX, int vertexY) {
         int cursorRadius = mPaddingH >> 2;
 
-        Path cursor = new Path();
+        Path mCursorPath = new Path();
 
-        cursor.moveTo(vertexX, vertexY);
-        cursor.lineTo(vertexX + (float) (cursorRadius / 2 * Math.sqrt(3)), vertexY - cursorRadius / 2);
-        cursor.lineTo(vertexX + cursorRadius * 2, vertexY - cursorRadius / 2);
-        cursor.lineTo(vertexX + cursorRadius * 2, vertexY + cursorRadius / 2);
-        cursor.lineTo(vertexX + (float) (cursorRadius / 2 * Math.sqrt(3)), vertexY + cursorRadius / 2);
-        cursor.lineTo(vertexX, vertexY);
-        cursor.close();
+        mCursorPath.moveTo(vertexX, vertexY);
+        mCursorPath.lineTo(vertexX + (float) (cursorRadius / 2 * Math.sqrt(3)), vertexY - cursorRadius / 2);
+        mCursorPath.lineTo(vertexX + cursorRadius * 2, vertexY - cursorRadius / 2);
+        mCursorPath.lineTo(vertexX + cursorRadius * 2, vertexY + cursorRadius / 2);
+        mCursorPath.lineTo(vertexX + (float) (cursorRadius / 2 * Math.sqrt(3)), vertexY + cursorRadius / 2);
+        mCursorPath.lineTo(vertexX, vertexY);
+        mCursorPath.close();
 
         mPaint.setColor(Color.RED);
-        canvas.drawPath(cursor, mPaint);
+        canvas.drawPath(mCursorPath, mPaint);
+    }
+
+    private float getCurveX(float v) {
+        return mPaddingH + xRange * v;
+    }
+
+    private float getCurveY(float v) {
+        return mHeight - mPaddingV - mInterpolator.getInterpolation(v) * yRange;
     }
 
     public void setInterpolator(Interpolator interpolator) {
