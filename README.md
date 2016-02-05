@@ -3,6 +3,8 @@
 [ ![Download](https://api.bintray.com/packages/ydcool/maven/easing-android/images/download.svg) ]
 (https://bintray.com/ydcool/maven/easing-android/_latestVersion)
 
+[![Build Status](https://travis-ci.org/Ydcool/EasingAndroid.svg?branch=master)](https://travis-ci.org/Ydcool/EasingAndroid)
+
 Android easing interpolators.Based on http://easings.net
 
 #### Demo
