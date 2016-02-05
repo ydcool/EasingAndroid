@@ -3,13 +3,11 @@ sudo: false
 jdk: oraclejdk7
 env:
   matrix:
-  - ANDROID_TARGET=android-23
-# - ANDROID_ABI=armeabi
+  - ANDROID_TARGET=android-23  ANDROID_ABI=armeabi-v7a armeabi
 android:
   components:
-  - platform-tools
-  - build-tools-23.0.2
   - android-23
+  - build-tools-23.0.2
   - extra-android-m2repository
   - extra-android-support
 before_install:
