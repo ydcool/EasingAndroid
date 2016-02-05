@@ -6,8 +6,9 @@ jdk: oraclejdk7
 #  - ANDROID_TARGET=android-23  ANDROID_ABI=armeabi-v7a armeabi
 android:
   components:
-  - android-23
+  - tools
   - build-tools-23.0.2
+  - android-23
   - extra-android-m2repository
   - extra-android-support
 #before_install:
