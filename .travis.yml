@@ -8,7 +8,7 @@ android:
   components:
   - platform-tools
   - build-tools-23.0.2
-  - android-M
+  - android-23
   - extra-android-m2repository
   - extra-android-support
 before_install:
