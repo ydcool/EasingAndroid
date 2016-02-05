@@ -1,15 +1,17 @@
 language: android
 sudo: false
-jdk: oraclejdk7
+jdk: oraclejdk8
 env:
   matrix:
-  - ANDROID_TARGET=android-23  ANDROID_ABI=armeabi-v7a armeabi
+  - ANDROID_TARGET=android-22  ANDROID_ABI=armeabi-v7a armeabi
 android:
   components:
   - platform-tools
   - build-tools-23.0.2
-  - android-L
+  - android-M
   - extra
+  - extra-android-m2repository
+  - extra-android-support
 before_install:
 #please use travis to config your sign
 before_script:
