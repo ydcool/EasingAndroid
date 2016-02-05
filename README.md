@@ -22,7 +22,7 @@ Directly download demo [apk](http://7xiilm.com1.z0.glb.clouddn.com/apk%2Feasing_
 
 ```java 
     dependencies {
-        compile 'me.ydcool:easing-android:latest.integration'
+        compile 'me.ydcool.lib:easing-android:latest.integration'
     }
 ```
 
