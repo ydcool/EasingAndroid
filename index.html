@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Easingandroid by Ydcool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Easingandroid</h1>
+      <h2 class="project-tagline">Android easing interpolators. Based on http://easing.net</h2>
+      <a href="https://github.com/Ydcool/EasingAndroid" class="btn">View on GitHub</a>
+      <a href="https://github.com/Ydcool/EasingAndroid/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Ydcool/EasingAndroid/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h3>
+<a id="easing-android" class="anchor" href="#easing-android" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Easing-Android</h3>
+
+<p><a href="https://bintray.com/ydcool/maven/easing-android/_latestVersion"> <img src="https://api.bintray.com/packages/ydcool/maven/easing-android/images/download.svg" alt="Download"> </a></p>
+
+<p><a href="https://travis-ci.org/Ydcool/EasingAndroid"><img src="https://travis-ci.org/Ydcool/EasingAndroid.svg?branch=master" alt="Build Status"></a></p>
+
+<p>Android easing interpolators.Based on <a href="http://easings.net">http://easings.net</a></p>
+
+<h4>
+<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo</h4>
+
+<h5>
+<a id="screencapture" class="anchor" href="#screencapture" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ScreenCapture</h5>
+
+<p><img src="https://raw.githubusercontent.com/Ydcool/EasingAndroid/master/art/demo.gif" alt="Demo"></p>
+
+<h5>
+<a id="demo-download" class="anchor" href="#demo-download" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo Download</h5>
+
+<p>Directly download demo <a href="http://7xiilm.com1.z0.glb.clouddn.com/apk%2Feasing_android_demo.apk">apk</a>  or scan <img src="https://api.qrserver.com/v1/create-qr-code/?data=http://7xiilm.com1.z0.glb.clouddn.com/apk%2Feasing_android_demo.apk&amp;size=100x100" alt="qrCode"></p>
+
+<h4>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h4>
+
+<h5>
+<a id="gradle" class="anchor" href="#gradle" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Gradle</h5>
+
+<div class="highlight highlight-source-java"><pre>    dependencies {
+        compile <span class="pl-s"><span class="pl-pds">'</span>me.ydcool.lib:easing-android:latest.integration<span class="pl-pds">'</span></span>
+    }</pre></div>
+
+<h4>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h4>
+
+<p>Use easing interpolators same as android build-in interpolators.</p>
+
+<div class="highlight highlight-source-java"><pre>    <span class="pl-smi">AlphaAnimation</span> animation <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">AlphaAnimation</span>(<span class="pl-c1">0.f</span>,<span class="pl-c1">1.f</span>);
+    animation<span class="pl-k">.</span>setDuration(<span class="pl-c1">300</span>);
+    animation<span class="pl-k">.</span>setInterpolator(<span class="pl-k">new</span> <span class="pl-smi">EaseOutCubicInterpolator</span>());
+    mView<span class="pl-k">.</span>startAnimation(animation);</pre></div>
+
+<h4>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h4>
+
+<pre><code>Copyright 2016 Ydcool
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/Ydcool/EasingAndroid">Easingandroid</a> is maintained by <a href="https://github.com/Ydcool">Ydcool</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
